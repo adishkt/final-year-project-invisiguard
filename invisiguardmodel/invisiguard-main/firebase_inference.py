@@ -318,8 +318,8 @@ class FirebaseListener:
                 if self._motion_cooldown > 0:
                     self._motion_cooldown -= 1
                     
-            # A true fall happens when motion has stopped, BUT there was an impact (motion) recently.
-            is_confirmed_fall = is_fall_raw and (not has_motion) and (self._motion_cooldown > 0)
+            # Since the device is used by active children, any strong fall signal should alert immediately.
+            is_confirmed_fall = is_fall_raw
             alert = is_confirmed_fall
             print(
                 f"[{now}] Buffer:{len(self._buffer)} | "
@@ -419,8 +419,8 @@ class FirebasePoller:
                 if self._motion_cooldown > 0:
                     self._motion_cooldown -= 1
 
-            # A true fall happens when motion has stopped, BUT there was an impact (motion) recently.
-            is_confirmed_fall = is_fall_raw and (not has_motion) and (self._motion_cooldown > 0)
+            # Since the device is used by active children, any strong fall signal should alert immediately.
+            is_confirmed_fall = is_fall_raw
             alert = is_confirmed_fall
             print(
                 f"[{now}] Buffer:{len(self._buffer)} | "
@@ -484,7 +484,8 @@ def run_test_mode(csv_path: str, fall_ckpt: str, motion_ckpt: str):
                     if motion_cooldown > 0:
                         motion_cooldown -= 1
                         
-                is_confirmed_fall = is_fall_raw and (not has_motion) and (motion_cooldown > 0)
+                # Since the device is used by active children, any strong fall signal should alert immediately.
+                is_confirmed_fall = is_fall_raw
                 alert = is_confirmed_fall
                 inference_count += 1
                 print(
