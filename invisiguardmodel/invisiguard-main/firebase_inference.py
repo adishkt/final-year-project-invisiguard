@@ -75,12 +75,12 @@ FIELD_Z             = "accelZ"
 FIELD_TIMESTAMP     = "timestamp"
 
 FALL_CKPT_PATH      = "checkpoints/fall-detection-epoch=35-val_loss=0.26.ckpt"
-MOTION_CKPT_PATH    = "checkpoints/motion/motion-classifier-epoch=09-val_loss=0.27.ckpt"
+MOTION_CKPT_PATH    = "checkpoints/motion/motion-classifier-epoch=14-val_loss=0.00.ckpt"
 
 SEQ_LEN             = 100    # Number of samples needed before inference
-STEP_SIZE           = 3     # Run inference on EVERY new reading (fall can happen in one moment)
+STEP_SIZE           = 6     # Run inference on EVERY new reading (fall can happen in one moment)
 THRESHOLD_FALL      = 0.5   # Increased to reduce false positives (was 0.5)
-THRESHOLD_MOTION    = 0.4    # Sudden motion probability threshold
+THRESHOLD_MOTION    = 0.5   # Sudden motion probability threshold
 POLL_INTERVAL_SEC   = 0.5    # How often to poll Firebase (seconds)
 
 # ─────────────────────────────────────────────────────
@@ -318,8 +318,9 @@ class FirebaseListener:
                 if self._motion_cooldown > 0:
                     self._motion_cooldown -= 1
                     
-            # Since the device is used by active children, any strong fall signal should alert immediately.
-            is_confirmed_fall = is_fall_raw
+            # Trigger fall alert if there is a fall AND (sudden motion OR no motion)
+            # Normal motion means has_motion is False AND we haven't seen sudden motion recently
+            is_confirmed_fall = is_fall_raw and (has_motion or self._motion_cooldown == 0)
             alert = is_confirmed_fall
             print(
                 f"[{now}] Buffer:{len(self._buffer)} | "
@@ -419,8 +420,9 @@ class FirebasePoller:
                 if self._motion_cooldown > 0:
                     self._motion_cooldown -= 1
 
-            # Since the device is used by active children, any strong fall signal should alert immediately.
-            is_confirmed_fall = is_fall_raw
+            # Trigger fall alert if there is a fall AND (sudden motion OR no motion)
+            # Normal motion means has_motion is False AND we haven't seen sudden motion recently
+            is_confirmed_fall = is_fall_raw and (has_motion or self._motion_cooldown == 0)
             alert = is_confirmed_fall
             print(
                 f"[{now}] Buffer:{len(self._buffer)} | "
@@ -484,8 +486,9 @@ def run_test_mode(csv_path: str, fall_ckpt: str, motion_ckpt: str):
                     if motion_cooldown > 0:
                         motion_cooldown -= 1
                         
-                # Since the device is used by active children, any strong fall signal should alert immediately.
-                is_confirmed_fall = is_fall_raw
+                # Trigger fall alert if there is a fall AND (sudden motion OR no motion)
+                # Normal motion means has_motion is False AND we haven't seen sudden motion recently
+                is_confirmed_fall = is_fall_raw and (has_motion or motion_cooldown == 0)
                 alert = is_confirmed_fall
                 inference_count += 1
                 print(

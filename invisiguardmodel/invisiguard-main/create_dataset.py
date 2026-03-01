@@ -150,7 +150,7 @@ def create_dataset_from_folder_structure(
             if not available_columns:
                 print(
                     f"Warning: None of the selected columns found in {
-                        csv_file
+                        repr(csv_file)
                     }, skipping"
                 )
                 continue
@@ -175,7 +175,7 @@ def create_dataset_from_folder_structure(
             if missing_columns:
                 print(
                     f"Warning: Columns {missing_columns} not found in {
-                        csv_file
+                        repr(csv_file)
                     }, skipping file"
                 )
                 continue
@@ -195,13 +195,13 @@ def create_dataset_from_folder_structure(
             all_labels.extend([label] * len(sequences))
 
             print(
-                f"Processed {csv_file}: {len(sequences)} sequences, label: {
-                    label_name
+                f"Processed {repr(csv_file)}: {len(sequences)} sequences, label: {
+                    repr(label_name)
                 } ({label})"
             )
 
         except Exception as e:
-            print(f"Error processing {csv_file}: {e}")
+            print(f"Error processing {repr(csv_file)}: {e}")
             continue
 
     # Convert to numpy arrays

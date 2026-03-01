@@ -1,0 +1,762 @@
+﻿============================================================
+MOTION CLASSIFIER - ML Approach (LSTM)
+============================================================
+
+Loading dataset from JO_FALL folder...
+Creating fall/ADL dataset...
+Looking for CSV files in: JO_FALL
+Found 683 CSV files
+Using columns: ['x', 'y', 'z']
+Number of features: 3
+Label mapping: {'adl': 0, 'fall': 1}
+Processed 'JO_FALL\\synthetic_static\\adl\\static_000.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_001.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_002.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_003.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_004.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_005.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_006.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_007.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_008.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_009.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_010.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_011.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_012.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_013.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_014.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_015.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_016.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_017.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_018.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_019.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_020.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_021.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_022.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_023.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_024.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_025.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_026.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_027.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_028.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_029.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_030.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_031.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_032.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_033.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_034.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_035.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_036.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_037.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_038.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_039.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_040.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_041.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_042.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_043.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_044.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_045.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_046.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_047.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_048.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_049.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_050.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_051.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_052.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_053.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_054.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_055.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_056.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_057.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_058.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_059.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_060.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_061.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_062.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_063.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_064.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_065.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_066.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_067.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_068.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_069.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_070.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_071.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_072.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_073.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_074.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_075.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_076.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_077.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_078.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_079.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_080.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_081.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_082.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_083.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_084.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_085.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_086.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_087.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_088.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_089.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_090.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_091.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_092.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_093.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_094.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_095.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_096.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_097.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_098.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_099.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_100.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_101.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_102.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_103.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_104.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_105.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_106.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_107.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_108.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_109.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_110.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_111.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_112.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_113.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_114.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_115.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_116.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_117.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_118.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_119.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_120.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_121.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_122.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_123.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_124.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_125.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_126.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_127.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_128.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_129.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_130.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_131.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_132.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_133.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_134.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_135.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_136.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_137.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_138.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_139.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_140.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_141.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_142.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_143.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_144.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_145.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_146.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_147.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_148.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_149.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_150.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_151.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_152.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_153.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_154.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_155.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_156.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_157.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_158.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_159.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_160.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_161.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_162.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_163.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_164.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_165.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_166.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_167.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_168.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_169.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_170.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_171.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_172.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_173.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_174.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_175.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_176.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_177.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_178.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_179.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_180.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_181.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_182.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_183.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_184.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_185.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_186.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_187.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_188.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_189.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_190.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_191.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_192.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_193.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_194.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_195.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_196.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_197.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_198.csv': 6 sequences, label: 'adl' (0)
+Processed 'JO_FALL\\synthetic_static\\adl\\static_199.csv': 6 sequences, label: 'adl' (0)
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\applaud7.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\hands up6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\lateral raise7.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\pattings the thighs4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\pattings the thighs5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\pattings the thighs6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion10.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion11.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion12.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion13.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion14.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion7.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion8.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\random motion9.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\rotate4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\rotate5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\rotate6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\stand and sit down4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\stand and sit down5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\stand and sit down6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk11.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk12.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk13.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk14.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk6.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk7.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk8.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\adl\\walk9.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards10_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards11_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards12_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards13_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards14_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards15_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards16_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards17_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards18_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards19_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards1_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards2_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards3_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards4_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards5_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards6_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards8_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards9_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall backwards_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward10_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward11_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward12_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward13_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward14_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward15_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward16_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward17_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward18_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward19_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward1_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward20_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward21_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward2_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward3_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward4_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward5_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward6_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward7_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward8_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward9_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Fall forward_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall12_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall13_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall14_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall15_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall16_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall17_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall18_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall1_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall2_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall3_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall4_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall5_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall6_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall8_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_10_left_hand\\fall\\Lateral fall9_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\applaud1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\patting the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\patting the thighs1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\patting the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\voluntary movement.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\voluntary movement1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\voluntary movement2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall backwards1.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall backwards4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall_backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall_forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall_forward2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall_forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall_forward4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Fall_forward5.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_1_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_2_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_3_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_4_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_5_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_6_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_7_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_1_left_hand\\fall\\Lateral fall_8_Fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\patting the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\patting the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\patting the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\voluntary movement.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\voluntary movement2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\voluntary movement3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Fall backwards.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Fall backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Fall forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Fall forward2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Fall forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\falling in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\falling in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\falling in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Lateral fall2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_2_right_hand\\fall\\Lateral fall3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\random motion.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\random motion2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\random motion3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Fall backwards.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Fall backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Fall forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Fall forward2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Fall forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\fall in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\fall in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\fall in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Lateral fall2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_3_right_hand\\fall\\Lateral fall3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\random motion.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\random motion2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\random motion3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Fall backwards.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Fall backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Fall forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Fall forward2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Fall forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\fall in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\fall in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\fall in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Lateral fall2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_4_left_hand\\fall\\Lateral fall3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\lie.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\lie2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\lie3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\random motion.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\random motion2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\random motion3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\wave.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\wave2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\adl\\wave3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Fall backwards.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Fall backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Fall forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Fall forward2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Fall forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\fall in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\fall in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\fall in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Lateral fall2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_5_left_hand\\fall\\Lateral fall3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\random motion.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\random motion2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\random motion3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Fall backwards.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Fall backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Fall forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Fall forward2..csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Fall forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\fall in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\fall in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\fall in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Lateral fall2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_6_left_hand\\fall\\Lateral fall3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\hands up.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\hands up2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\hands up3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\lie.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\lie2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\lie3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\massage.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\random motion.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\random motion2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\random motion3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\rotate.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\rotate2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\rotate3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\taking things.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\taking things2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\taking things3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\adl\\wave.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Fall backwards.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Fall backwards2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Fall backwards3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Fall forward.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Fall forward2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Fall forward3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\fall in bed.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\fall in bed2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\fall in bed3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Lateral fall.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Lateral fall2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_7_left_hand\\fall\\Lateral fall3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\applaud.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\applaud2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\applaud3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lateral raise.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lateral raise2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lateral raise3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lateral raise4.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lie.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lie2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\lie3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\pattings the thighs.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\pattings the thighs2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\pattings the thighs3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\stand and sit down.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\stand and sit down2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\stand and sit down3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\walk.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\walk2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\walk3.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\wave.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\wave2.csv', skipping
+Warning: None of the selected columns found in 'JO_FALL\\volunteer_8_left_hand\\adl\\wave3.csv', skipping
+python : Traceback (most 
+recent call last):
+At line:1 char:1
++ python 
+detect_motion_ml.py > 
+train_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Tra  
+  ceback (most recent ca   
+ ll last)::String) [],     
+RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+  File "D:\GitHub\invisi\in
+visiguard_final-year-projec
+t\final-year-project-invisi
+guard\invisiguardmodel\invi
+siguard-main\create_dataset
+.py", line 151, in create_d
+ataset_from_folder_structur
+e
+    print(
+    ~~~~~^
+        f"Warning: None of 
+the selected columns found 
+in {
+        ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^
+            repr(csv_file)
+            ^^^^^^^^^^^^^^
+        }, skipping"
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\lenovo\ana
+conda3\Lib\encodings\cp1252
+.py", line 19, in encode
+    return codecs.charmap_e
+ncode(input,self.errors,enc
+oding_table)[0]
+           ~~~~~~~~~~~~~~~~
+~~~~~^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode characters in 
+position 86-89: character 
+maps to <undefined>
+
+During handling of the 
+above exception, another 
+exception occurred:
+
+Traceback (most recent 
+call last):
+  File "D:\GitHub\invisi\in
+visiguard_final-year-projec
+t\final-year-project-invisi
+guard\invisiguardmodel\invi
+siguard-main\detect_motion_
+ml.py", line 600, in 
+<module>
+    sequences, labels, 
+label_map, feature_names = 
+create_fall_adl_dataset(
+                           
+                       
+~~~~~~~~~~~~~~~~~~~~~~~^
+        
+data_folder="JO_FALL",
+        
+^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        normalize=True,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\GitHub\invisi\in
+visiguard_final-year-projec
+t\final-year-project-invisi
+guard\invisiguardmodel\invi
+siguard-main\create_dataset
+.py", line 318, in 
+create_fall_adl_dataset
+    return create_dataset_f
+rom_folder_structure(
+        
+data_folder=data_folder,
+    ...<8 lines>...
+        **kwargs,
+    )
+  File "D:\GitHub\invisi\in
+visiguard_final-year-projec
+t\final-year-project-invisi
+guard\invisiguardmodel\invi
+siguard-main\create_dataset
+.py", line 204, in create_d
+ataset_from_folder_structur
+e
+    print(f"Error 
+processing 
+{repr(csv_file)}: {e}")
+    ~~~~~^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\ana
+conda3\Lib\encodings\cp1252
+.py", line 19, in encode
+    return codecs.charmap_e
+ncode(input,self.errors,enc
+oding_table)[0]
+           ~~~~~~~~~~~~~~~~
+~~~~~^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode characters in 
+position 56-59: character 
+maps to <undefined>

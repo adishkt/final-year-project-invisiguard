@@ -412,6 +412,7 @@ class MotionClassifierLSTM(pl.LightningModule):
             print("\nClassification Report:")
             print(classification_report(
                 labels_np, preds_np, 
+                labels=[0, 1],
                 target_names=['Normal', 'Sudden'],
                 zero_division=0
             ))
