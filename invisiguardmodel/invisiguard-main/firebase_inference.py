@@ -318,9 +318,9 @@ class FirebaseListener:
                 if self._motion_cooldown > 0:
                     self._motion_cooldown -= 1
                     
-            # Trigger fall alert if there is a fall AND (sudden motion OR no motion)
-            # Normal motion means has_motion is False AND we haven't seen sudden motion recently
-            is_confirmed_fall = is_fall_raw and (has_motion or self._motion_cooldown == 0)
+            # Trigger fall alert if there is a fall AND there is NO sudden motion
+            # (i.e., normal motion / resting)
+            is_confirmed_fall = is_fall_raw and not has_motion
             alert = is_confirmed_fall
             print(
                 f"[{now}] Buffer:{len(self._buffer)} | "
@@ -420,9 +420,9 @@ class FirebasePoller:
                 if self._motion_cooldown > 0:
                     self._motion_cooldown -= 1
 
-            # Trigger fall alert if there is a fall AND (sudden motion OR no motion)
-            # Normal motion means has_motion is False AND we haven't seen sudden motion recently
-            is_confirmed_fall = is_fall_raw and (has_motion or self._motion_cooldown == 0)
+            # Trigger fall alert if there is a fall AND there is NO sudden motion
+            # (i.e., normal motion / resting)
+            is_confirmed_fall = is_fall_raw and not has_motion
             alert = is_confirmed_fall
             print(
                 f"[{now}] Buffer:{len(self._buffer)} | "
@@ -486,9 +486,9 @@ def run_test_mode(csv_path: str, fall_ckpt: str, motion_ckpt: str):
                     if motion_cooldown > 0:
                         motion_cooldown -= 1
                         
-                # Trigger fall alert if there is a fall AND (sudden motion OR no motion)
-                # Normal motion means has_motion is False AND we haven't seen sudden motion recently
-                is_confirmed_fall = is_fall_raw and (has_motion or motion_cooldown == 0)
+                # Trigger fall alert if there is a fall AND there is NO sudden motion
+                # (i.e., normal motion / resting)
+                is_confirmed_fall = is_fall_raw and not has_motion
                 alert = is_confirmed_fall
                 inference_count += 1
                 print(
